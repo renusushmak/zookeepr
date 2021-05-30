@@ -116,6 +116,7 @@ app.post('/api/animals', (req, res) => {
     console.log("New animal added", animal.name, animal.id);
     res.status(200).json(animal);
   }
+  
 });
 
 app.listen(PORT, () => {
