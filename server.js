@@ -49,7 +49,7 @@ function createNewAnimal(body, animalsArray) {
   animalsArray.push(animal);
   fs.writeFileSync(
     path.join(__dirname, './data/animals.json'),
-    JSON.stringify({ animals: animalsArray }, null, 2)
+    JSON.stringify({ animals: animalsArray }, null, 2).concat('\n')
   );
   return animal;
 }
@@ -113,7 +113,7 @@ app.post('/api/animals', (req, res) => {
     // add animal to json file and animals array in this function
     const animal = createNewAnimal(req.body, animals);
     //res.json(animal);
-    console.log("New animal added", animal.name, animal.id);
+    console.log("New animal added: #", animal.id, animal.name);
     res.status(200).json(animal);
   }
 

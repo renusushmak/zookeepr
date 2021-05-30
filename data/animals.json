@@ -172,6 +172,26 @@
         "hungry"
       ],
       "id": "17"
+    },
+    {
+      "name": "SherKhan",
+      "species": "tiger",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "hungry",
+        "rash"
+      ],
+      "id": "18"
+    },
+    {
+      "name": "Simbaa",
+      "species": "Lion",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "hungry",
+        "quirky"
+      ],
+      "id": "19"
     }
   ]
 }
