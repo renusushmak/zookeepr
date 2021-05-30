@@ -70,9 +70,9 @@ function validateAnimal(animal) {
   return true;
 }
 
-function validateDuplicates({name}) {
+function validateDuplicates({ name }) {
   //animals.forEach(animal => {
-    for(let i=0; i<animals.length; i++) {
+  for (let i = 0; i < animals.length; i++) {
     let animal = animals[i];
     //loop thru every single 'animal'
     if (animal.name.toLowerCase() === name.toLowerCase()) {
@@ -107,7 +107,7 @@ app.post('/api/animals', (req, res) => {
   // if any data in req.body is incorrect, send 400 error back
   if (!validateAnimal(req.body)) {
     res.status(400).sendStatus('New animal entry is not properly formatted.');
-  } else if(!validateDuplicates(req.body)) {
+  } else if (!validateDuplicates(req.body)) {
     res.status(400).sendStatus('Duplicate');
   } else {
     // add animal to json file and animals array in this function
@@ -116,7 +116,7 @@ app.post('/api/animals', (req, res) => {
     console.log("New animal added", animal.name, animal.id);
     res.status(200).json(animal);
   }
-  
+
 });
 
 app.listen(PORT, () => {
